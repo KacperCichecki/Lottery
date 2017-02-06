@@ -1,0 +1,31 @@
+.root{
+    -fx-base: #EE9060;
+    -fx-background: #F0F0F0;
+}
+
+#vb{
+    -fx-background-color: linear-gradient(#A52A2A, #DC143C);
+    -fx-text-fill: #FFFFFF;
+}
+
+.menu-item{
+-fx-font-size: 10pt;
+}
+
+.button{
+    -fx-background-color: #FFA07A;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 4;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+.button:hover{
+    -fx-background-color: #EE9060;
+}
+
+#addButton{
+    -fx-background-color:  	#800000;
+    -fx-background-radius: 4;
+}
+#addButton:hover{
+    -fx-background-color:  	#911111;
+}

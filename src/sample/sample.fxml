@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="vb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+                  <MenuItem fx:id="loadFile" mnemonicParsing="false" onAction="#loadFile" text="Load file" />
+            <MenuItem fx:id="menuNew" onAction="#clearList" text="_New List">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <Menu fx:id="saveList" disable="true" mnemonicParsing="false" text="Save List">
+                    <items>
+                      <MenuItem id="serSave" fx:id="serSave" mnemonicParsing="false" onAction="#saveList" text="as .ser">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem id="txtSave" fx:id="txtSave" mnemonicParsing="false" onAction="#saveTxt" text="as .txt" />
+                    </items>
+                  </Menu>
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="View">
+              <items>
+                  <Menu mnemonicParsing="false" text="Choose theme">
+                    <items>
+                        <RadioMenuItem id="snowy" fx:id="snowyTheme" mnemonicParsing="false" onAction="#chooseSnowyTheme" text="snowy">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Theme" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem id="spring" fx:id="ChristmasTheme" mnemonicParsing="false" onAction="#chooseChristmasTheme" text="christmas" toggleGroup="$Theme" />
+                        <RadioMenuItem id="default" fx:id="defaultTheme" mnemonicParsing="false" onAction="#chooseDefaultTheme" selected="true" text="default" toggleGroup="$Theme" />
+                    </items>
+                  </Menu>
+              </items>
+            </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem id="menuHelp" fx:id="menuHelp" onAction="#showInfo" text="Program _info" />
+                  <MenuItem id="logMenu" fx:id="logMenu" mnemonicParsing="false" onAction="#showLogFile" text="log file" />
+          </items>
+        </Menu>
+      </menus>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+    </MenuBar>
+      <HBox prefHeight="304.0" prefWidth="473.0">
+         <children>
+            <TableView id="table" fx:id="table" editable="true">
+              <columns>
+                <TableColumn id="col1" fx:id="col1" minWidth="30.0" prefWidth="30.0" resizable="false" text="Id." />
+                <TableColumn id="col2" fx:id="col2" maxWidth="-1.0" minWidth="130.0" prefWidth="130.0" text="Name of person" />
+                  <TableColumn id="col3" fx:id="col3" maxWidth="-1.0" minWidth="130.0" prefWidth="130.0" text="Drawed person" />
+              </columns>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </HBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ImageView id="santa" fx:id="santa" onMouseClicked="#santaVoice" pickOnBounds="true" visible="false">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@pic/CrazySanta.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox focusTraversable="true" prefHeight="40.0" prefWidth="640.0">
+         <children>
+            <TextField id="textField" fx:id="nameInput" minWidth="130.0" prefWidth="130.0" promptText="type name">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </TextField>
+            <Button id="addButton" fx:id="addButton" defaultButton="true" mnemonicParsing="false" onAction="#addPerson" onKeyPressed="#addPerson" text="Add person">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="drawButton" fx:id="drawButton" disable="true" layoutX="231.0" layoutY="30.0" mnemonicParsing="false" onAction="#drawPeople" text="Draw">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="deleteButton" fx:id="deleteButton" disable="true" mnemonicParsing="false" onAction="#deletePerson" text="Delete">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+            <TextArea id="infoLabel" fx:id="infoLabel" prefHeight="25.0" prefWidth="70.0" wrapText="true">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="90.0" />
+               </HBox.margin>
+            </TextArea>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+  </children>
+</VBox>
