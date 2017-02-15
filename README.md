@@ -20,4 +20,7 @@ pojawia się przypisana osoba.
   Wyniki można zapisać w formie tekstowej oraz formie 
 powzwalającej później wczytać do programu wyniki danego losowania.
   Natchnieniem była wigilia rodzinna, na której było ok 15 osób :)
+  
+  download runnable jar: https://github.com/KacperCichecki/Lottery/blob/master/out/artifacts/Lottery_jar/Lottery_jar.jar
+  source code: https://github.com/KacperCichecki/Lottery/tree/master/src/sample
 
